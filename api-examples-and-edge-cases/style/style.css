@@ -1,0 +1,22 @@
+.countries-class{
+    border: 1px solid rgb(196, 128, 116);
+    margin:10px;
+    padding:10px;
+    border-radius: 5px;
+    background-color: rgb(242, 211, 171);
+    
+}
+#countries-container{
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:15px;
+}
+.button{
+    background-color: rgb(197, 197, 228);
+    border: 1px solid rgb(161, 157, 191);
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+}

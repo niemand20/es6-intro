@@ -14,13 +14,12 @@ const displayCountries = countries => {
         countriesDiv.innerHTML=`
         <h3>Name: ${country.name.common}</h3>
         <h3>Capital: ${country.capital?country.capital[0]:"No Capital"}</h3>
-        <h3>Currency: ${country.currencies.name}</h3>
+        <h3>Currency: ${country.currencies[Object.keys(country.currencies)].name}</h3>
         <h3>Time Zone: ${country.timezones}</h3>
         <h3>Population: ${country.population}</h3>
         <h3>Continent: ${country.continents}</h3>
         <h3>Flag: ${country.flag}</h3>
-       
-        
+       <button class="button" onclick=" loadCountryDetails()">Details</button>
         `
          
         countryContainer.appendChild(countriesDiv);
@@ -30,7 +29,9 @@ const displayCountries = countries => {
     
 }
 
-
+const loadCountryDetails = ()=>{
+    console.log("get country details")
+}
 
 
 loadCountries();
