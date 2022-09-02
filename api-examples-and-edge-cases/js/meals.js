@@ -7,12 +7,13 @@ const loadMeals= search =>{
 
 const displayMeals = meals =>{
     const mealsContainer = document.getElementById("meal-container");
+    mealsContainer.innerHTML=``;
     meals.forEach(meal=>{
         console.log(meal);
         const mealDiv = document.createElement("div");
         mealDiv.classList.add("col");
         mealDiv.innerHTML =`
-        <div class="card">
+        <div onclick = "displayMealDetail(${meal.idMeal})" class="card">
                     <img src="${meal.strMealThumb}" class="card-img-top" alt="...">
                     <div class="card-body">
                        <h5 class="card-title">Meal ${meal.strMeal}</h5>
@@ -25,5 +26,19 @@ const displayMeals = meals =>{
 };
 
 
-loadMeals("rice");
+const searchFood = () => {
+    const searchField = document.getElementById("search-field");
+    const searchText = searchField.value;
+    // console.log("searching", searchText);
+    loadMeals(searchText);
+    searchField.value = "";
+}
+
+const displayMealDetail = (idMeal)=>{
+    // console.log("get detail of id", idMeal);
+    const url =`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`
+    console.log(url);
+}
+
+loadMeals("");
 // loadMeals("fish");
