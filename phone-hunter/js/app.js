@@ -36,6 +36,8 @@ const displayPhones = phones =>{
         `
         phonesContainer.appendChild(phoneDiv);
     })
+    //stop spinner or loader
+    toggleSpinner(false);
    
 }
 
@@ -51,6 +53,9 @@ const toggleSpinner = isLoading =>{
     const loaderSection = document.getElementById("loader");
     if(isLoading){
         loaderSection.classList.remove("d-none");
+    }
+    else{
+        loaderSection.classList.add("d-none");
     }
 }
 
