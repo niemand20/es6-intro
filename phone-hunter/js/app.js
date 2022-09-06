@@ -100,7 +100,9 @@ const displayPhoneDetails = phone =>{
     modalTitle.innerText = phone.name;
     const phoneDetails = document.getElementById("phone-details");
     phoneDetails.innerHTML =`
-    <p>Release date: ${phone.releaseDate}</p>
+    <p>Release date: ${phone.releaseDate? phone.releaseDate : "No release date found"}</p>
+    <p>Main Features: ${phone.mainFeatures? phone.mainFeatures.storage: "No storage found"}</p>
+    <p>Others: ${phone.others? phone.others.Bluetooth: "No bluetooth feature found"}</p>
     `
 }
 
