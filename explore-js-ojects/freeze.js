@@ -12,3 +12,8 @@ const values = Object.values(bottle);
 
 const pairs = Object.entries(bottle);
 //console.log(pairs);
+
+console.log(bottle);
+
+delete bottle.isCleaned;
+console.log(bottle);
